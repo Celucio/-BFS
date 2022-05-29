@@ -52,4 +52,39 @@ class Grafo():
         for clave in self.m_adyacencia_lista.keys(): 
             #Muestra en la terminal el grafo
             print("Nodo", clave, ": ", self.m_adyacencia_lista[clave]) 
+    #Función que imprime el recorrido BFS desde un vértice fuente dado. bfs_traversal(int s) recorre los vértices alcanzables desde s.
+    def bfs_transversal(self, nodo_inicial):
+        '''
+        Recibe el valor de nodo_inicial, genera una lista de las colas visitadas 
+        y muestra el recorrido  realizado. 
+        '''
+        #Creación de nodos visitados
+        visitado = set()
+        #Definición de un elemento de tipo lista
+        cola = Queue()
+
+        #Añade el nodo a la lista
+        cola.put(nodo_inicial)
+        #Añade el nodo a la lista visitada
+        visitado.add(nodo_inicial)
+        #Bucle que permite mostrar los nodos
+        while not cola.empty():
+            #Quitar un vértice de la cola
+            nodo_actual = cola.get()
+            #Imprimir el nodo siguiente
+            print(nodo_actual, end = " ")
+            #Ciclo que obtiene todos los vértices adyacentes del vértice eliminado
+            for (nodo_proximo, peso) in self.m_adyacencia_lista[nodo_inicial]:
+                
+                #Nodo no visitado
+                if nodo_proximo not in visitado:
+                    '''
+                    Estructura condicional:
+                    Si un nodo adyacente no es visitado
+                    Indique al nodo como visitado y añada a la lista
+                    '''
+                    #Añade el nodo a la cola
+                    cola.put(nodo_proximo)
+                    #Indica que el nodo ha sido visitado
+                    visitado.add(nodo_proximo)
 
