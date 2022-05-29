@@ -74,7 +74,7 @@ class Grafo():
             #Imprimir el nodo siguiente
             print(nodo_actual, end = " ")
             #Ciclo que obtiene todos los vértices adyacentes del vértice eliminado
-            for (nodo_proximo, peso) in self.m_adyacencia_lista[nodo_inicial]:
+            for (nodo_proximo, peso) in self.m_adyacencia_lista[nodo_actual]:
                 
                 #Nodo no visitado
                 if nodo_proximo not in visitado:
