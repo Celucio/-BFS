@@ -88,3 +88,22 @@ class Grafo():
                     #Indica que el nodo ha sido visitado
                     visitado.add(nodo_proximo)
 
+#Main
+if __name__ == "__main__":
+    #Instanciamos el objeto
+    g = Grafo(5, dirigido=False)
+
+    #Agregue bordes al grafo con peso predeterminado = 1
+    g.añadir_nodo(0, 1)
+    g.añadir_nodo(0, 2)
+    g.añadir_nodo(1, 2)
+    g.añadir_nodo(1, 4)
+    g.añadir_nodo(2, 3)
+
+    #Imprime el grafo generado en el formulario nodo n: {(nodo, peso)}
+    g.mostrar_lista_adyacencia()
+
+    #Muestra por medio de una lista las colas visitadas
+    print ("A continuación se muestra el recorrido primero en anchura (a partir del vértice 0)")
+    #Retorno de las colas visitadas 
+    g.bfs_transversal(0)
