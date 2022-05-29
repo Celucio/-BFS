@@ -42,4 +42,14 @@ class Grafo():
             #Ingreso del nodo1 a la lista de adyacencia del nodo2
             self.m_adyacencia_lista[nodo2].add((nodo1, peso)) #Añadir el nodo1 a la lista de adyacencia del nodo2
 
+    # Imprime la representación del grafo
+    def mostrar_lista_adyacencia(self):
+        '''
+        Recorrido de la lista por parte de una clave
+        Retorna la impresión del nodo y el grafo
+        '''
+        #Generacion del ciclo for que permite recorrer el tamaño del nodo
+        for clave in self.m_adyacencia_lista.keys(): 
+            #Muestra en la terminal el grafo
+            print("Nodo", clave, ": ", self.m_adyacencia_lista[clave]) 
 
