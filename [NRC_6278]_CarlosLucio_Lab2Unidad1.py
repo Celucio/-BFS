@@ -107,3 +107,22 @@ if __name__ == "__main__":
     print ("A continuación se muestra el recorrido primero en anchura (a partir del vértice 0)")
     #Retorno de las colas visitadas 
     g.bfs_transversal(0)
+    print()
+    print("Crear un nuevo grafo")
+    #Crearemos un nuevo grafo
+    g1 = Grafo(4, dirigido=True)
+    #Agregue bordes al grafo con peso predeterminado = 1
+    g1.añadir_nodo(0, 1)
+    g1.añadir_nodo(0, 2)
+    g1.añadir_nodo(0, 3)
+    g1.añadir_nodo(1, 2)
+    g1.añadir_nodo(1, 3)
+    g1.añadir_nodo(2, 3)
+    g1.añadir_nodo(3, 1)
+    #Imprime el grafo generado en el formulario nodo n: {(nodo, peso)}
+    g1.mostrar_lista_adyacencia()
+    #Muestra por medio de una lista las colas visitadas
+    print ("A continuación se muestra el recorrido primero en anchura (a partir del vértice 0)")
+    #Retorno de las colas visitadas
+    g1.bfs_transversal(0)
+
