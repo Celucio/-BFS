@@ -109,7 +109,7 @@ if __name__ == "__main__":
     g.bfs_transversal(0)
     print()
     print("Crear un nuevo grafo")
-    #Crearemos un nuevo grafo
+    #Crearemos un nuevo grafo 1
     g1 = Grafo(4, dirigido=True)
     #Agregue bordes al grafo con peso predeterminado = 1
     g1.añadir_nodo(0, 1)
@@ -125,4 +125,29 @@ if __name__ == "__main__":
     print ("A continuación se muestra el recorrido primero en anchura (a partir del vértice 0)")
     #Retorno de las colas visitadas
     g1.bfs_transversal(0)
+    #Crearemos un nuevo grafo 2
+    print()
+    print("Crear un nuevo grafo")
+    #Instanciamos el nuevo objeto
+    g2 = Grafo(8, dirigido=False)
+    #Agregue bordes al grafo con peso predeterminado = 1
+    g2.añadir_nodo(0, 1)
+    g2.añadir_nodo(0, 5)
+    g2.añadir_nodo(1, 5)
+    g2.añadir_nodo(5, 4)
+    g2.añadir_nodo(5, 2)
+    g2.añadir_nodo(2, 0)
+    g2.añadir_nodo(2, 3)
+    g2.añadir_nodo(2, 4)
+    g2.añadir_nodo(3, 4)
+    g2.añadir_nodo(3, 7)
+    g2.añadir_nodo(4, 6)
+    g2.añadir_nodo(6, 3)
+    g2.añadir_nodo(6, 7)
+    #Imprime el grafo generado en el formulario nodo n: {(nodo, peso)}
+    g2.mostrar_lista_adyacencia()
+    #Muestra por medio de una lista las colas visitadas
+    print ("A continuación se muestra el recorrido primero en anchura (a partir del vértice 0)")
+    #Retorno de las colas visitadas
+    g2.bfs_transversal(0)
 
