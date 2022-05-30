@@ -136,6 +136,7 @@ if __name__ == "__main__":
     g2.añadir_nodo(1, 5)
     g2.añadir_nodo(2, 5)
     g2.añadir_nodo(2, 4)
+    g2.añadir_nodo(3, 4)
     g2.añadir_nodo(3, 7)
     g2.añadir_nodo(4, 6)
     g2.añadir_nodo(5, 3)
