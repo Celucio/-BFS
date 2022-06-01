@@ -8,14 +8,53 @@ Importaremos la libreria Queue para generar listas en el programa
 #Importamos la libreria Queue
 from queue import Queue
 
-#Crearemos una clase grafo para instanciar el objeto y generar nodos
+
 class Grafo():
-    # Constructor
+    '''
+    Creación de la clase Grafo para instanciar el objeto y generar nodos
+    Esta clase contiene sus atributos y funciones que permiten generar
+    el grafo deseado
+
+    Atributos:
+        m_numero_de_nodos: int
+            Representa la cantidad de nodos que tendra el grafo
+        m_nodos: int
+            Representa el rango de nodos que tendra el grafo
+        m_dirigido: bool
+            Representa si el grafo es dirigido o no
+        m_adyacencia_lista: dict
+            Representa al diccionario de datos que almacena los nodos 
+    
+    Métodos:
+        __init__(self, numero_de_nodos, dirigido=True):
+            Constructor de la clase Grafo
+        añadir_nodo(self, nodo1, nodo2, peso=1):
+            Funcion que recibe por parámetro los nodos e ingresa los nodos a la lista
+            en sus respectivas listas
+        mostrar_lista_adyacencia(self):
+            Funcion que permite mostrar la lista de adyacencia
+        bfs_trasversal(self, nodo_inicial):
+            Funcion que permite realizar el recorrido en profundidad en base a un 
+            vértice dado
+
+    '''
     def __init__(self, numero_de_nodos, dirigido=True):
+
         '''
-        Por medio de parámetros de entrada recibe el nodo
+        Este metodo permite instanciar el objeto de la clase Grafo por medio 
+        Por medio de parámetros de entrada recibe el numero de nodos e indica 
+        si el grafo es dirigido o no
+        --------------------------------------------------------------
+        Parametros(self, numero_de_nodos, dirigido=True):
+            numero_de_nodos: int
+                Representa el numero de nodos que tendra el grafo
+            dirigido: bool
+                Representa si el grafo es dirigido o no
+        Retorna:
+            No retorna nada
+        --------------------------------------------------------------
         '''
-        #Definiendo las variables del constructor del grafo
+        #Asignación del numero de nodos a nodo recibido por parámetro
         self.m_numero_de_nodos = numero_de_nodos 
         '''
         Esta variable determinar el rango de nodos que tendra el grafo
@@ -26,14 +65,27 @@ class Grafo():
 		
         #Dirigido o No Dirigido
         self.m_dirigido = dirigido
-        #Representación del grafo - Lista de Adyacencia
+        '''
+        Esta asignación representa la creación de un diccionario de datos
+        Este determina el espacio en donde se almacenarán los nodos
+        '''
         self.m_adyacencia_lista = {self: set() for self in self.m_nodos}     
         
     #Añade un nodo al grafo
     def añadir_nodo(self, nodo1, nodo2, peso=1):
         '''
-        Funcion que recibe por parámetro los nodos
-        retorna la agregación de los nodos en la lista
+        Funcion que recibe por parámetro los nodos 1 y 2, además del peso
+        Asigna cada uno de los nodos a la lista de adyacencia.
+
+        Parametros: (self, nodo1, nodo2, peso=1)
+            nodo1: int
+                Representa el nodo 1
+            nodo2: int
+                Representa el nodo 2
+            peso: int
+                Representa el peso de la arista
+        Retorna:
+            No retorna nada
         '''
         #Ingreso del nodo2 a la lista de adyacencia del nodo1
         self.m_adyacencia_lista[nodo1].add((nodo2, peso))
@@ -45,8 +97,11 @@ class Grafo():
     # Imprime la representación del grafo
     def mostrar_lista_adyacencia(self):
         '''
-        Recorrido de la lista por parte de una clave
-        Retorna la impresión del nodo y el grafo
+        Muestra el grafo generado por parte de una clave a través de la lista de adyacencia
+        Parametros():
+            No recibe parámetros
+        Retorna:
+            No retorna nada
         '''
         #Generacion del ciclo for que permite recorrer el tamaño del nodo
         for clave in self.m_adyacencia_lista.keys(): 
@@ -57,6 +112,11 @@ class Grafo():
         '''
         Recibe el valor de nodo_inicial, genera una lista de las colas visitadas 
         y muestra el recorrido  realizado. 
+        Parametros(nodo_inicial):
+            nodo_inicial: int
+                Representa el nodo inicial
+        Retorna:
+            No retorna nada
         '''
         #Creación de nodos visitados
         visitado = set()
@@ -90,6 +150,11 @@ class Grafo():
 
 #Main
 if __name__ == "__main__":
+    '''
+    Creación del método main en donde llamaremos a la clase grafo
+    De esta manera se puede instanciar un objeto de este tipo
+    Enviando como parámetro el numero de nodos y si el grafo es dirigido o no
+    '''
     
     print()
     print("Crear un nuevo grafo")
