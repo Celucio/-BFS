@@ -154,12 +154,30 @@ if __name__ == "__main__":
     Creación del método main en donde llamaremos a la clase grafo
     De esta manera se puede instanciar un objeto de este tipo
     Enviando como parámetro el numero de nodos y si el grafo es dirigido o no
+  
+    grafo = Grafo(4, True)
+    #Añadir nodos al grafo
+    grafo.añadir_nodo(0, 1)
+    grafo.añadir_nodo(0, 2)
+    grafo.añadir_nodo(0, 3)
+    grafo.añadir_nodo(1, 2)
+    grafo.añadir_nodo(1, 3)
+    grafo.añadir_nodo(2, 3)
+    grafo.añadir_nodo(3, 1)
+    #Mostrar la lista de adyacencia
+    grafo.mostrar_lista_adyacencia()
+    #Muestra por medio de una lista las colas visitadas
+    print ("A continuación se muestra el recorrido primero en anchura (a partir del vértice 0)")
+    #Retorno de las colas visitadas
+    #Imprime el recorrido BFS desde el nodo 0
+    grafo.bfs_transversal(0)
     '''
-    
+
+    '''
     print()
     print("Crear un nuevo grafo")
     #Instanciamos el nuevo objeto
-    g2 = Grafo(8, dirigido=False)
+    g2 = Grafo(8, dirigido=True)
     #Agregue bordes al grafo con peso predeterminado = 1
     g2.añadir_nodo(0, 1)
     g2.añadir_nodo(0, 5)
@@ -168,15 +186,36 @@ if __name__ == "__main__":
     g2.añadir_nodo(2, 4)
     g2.añadir_nodo(3, 4)
     g2.añadir_nodo(3, 7)
-    g2.añadir_nodo(4, 6)
+    g2.añadir_nodo(4, 2)
     g2.añadir_nodo(5, 3)
     g2.añadir_nodo(5, 4)
     g2.añadir_nodo(6, 3)
     g2.añadir_nodo(6, 7)
+    g2.añadir_nodo(7, 6)
     #Imprime el grafo generado en el formulario nodo n: {(nodo, peso)}
     g2.mostrar_lista_adyacencia()
     #Muestra por medio de una lista las colas visitadas
     print ("A continuación se muestra el recorrido primero en anchura (a partir del vértice 0)")
     #Retorno de las colas visitadas
     g2.bfs_transversal(0)
+    '''
+    print()
+    print("Crear un nuevo grafo")
+    #Instanciamos el nuevo objeto
+    g3 = Grafo(3, dirigido=True)
+    #Agregue bordes al grafo con peso predeterminado = 1
+    g3.añadir_nodo(0, 1, 3)
+    g3.añadir_nodo(0, 2, 2)
+    g3.añadir_nodo(1, 2, 5)
+    g3.añadir_nodo(2, 0, 4)
+    
+    #Imprime el grafo generado en el formulario nodo n: {(nodo, peso)}
+    g3.mostrar_lista_adyacencia()
+    #Muestra por medio de una lista las colas visitadas
+    print ("A continuación se muestra el recorrido primero en anchura (a partir del vértice 0)")    
+    #Retorno de las colas visitadas
+    g3.bfs_transversal(0)
+    
+
+    
 
